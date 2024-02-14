@@ -1,0 +1,34 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "buildOqtane",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder:Oqtane-Framework}/Oqtane.Server/Oqtane.Server.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "buildTheme",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder:Fabiano.Theme.RadzenLayoutSample}/Package/Fabiano.Theme.RadzenLayoutSample.Package.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "build",
+			"dependsOn": ["buildOqtane", "buildTheme"],
+			"dependsOrder": "sequence" // Use "parallel" if you prefer to build them simultaneously
+		}		
+	]
+}

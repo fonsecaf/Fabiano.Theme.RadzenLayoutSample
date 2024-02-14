@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Fabiano.Theme.RadzenLayoutSample",
+			"path": "."
+		},
+		{
+			"name": "Oqtane-Framework",
+			"path": "../Oqtane-Framework-5.0.1"
+		}
+	],
+	"settings": {},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": []
+	}
+}
