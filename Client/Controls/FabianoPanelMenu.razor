@@ -1,0 +1,25 @@
+@namespace Fabiano.Theme.RadzenLayoutSample.Controls
+
+@inherits MenuBase
+
+@if (MenuPages.Any())
+{
+    <RadzenPanelMenu DisplayStyle="@(SidebarExpanded ? MenuItemDisplayStyle.IconAndText : MenuItemDisplayStyle.Icon)" ShowArrow="@ShowArrow">
+        <FabianoPanelMenuItem ParentPage="null" Pages="MenuPages" />
+        @* <RadzenPanelMenuItem Text="Overview" Icon="home" />
+        <RadzenPanelMenuItem Text="Dashboard" Icon="dashboard" />
+        <RadzenPanelMenuItem Text="UI Fundamentals" Icon="auto_awesome">
+            <RadzenPanelMenuItem Text="Themes" Icon="color_lens" />
+            <RadzenPanelMenuItem Text="Colors" Icon="invert_colors" />
+        </RadzenPanelMenuItem> *@
+    </RadzenPanelMenu>
+}
+
+@code {
+
+    [Parameter]
+    public bool SidebarExpanded { get; set; }
+
+    [Parameter]
+    public bool ShowArrow { get; set; }
+}
