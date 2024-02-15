@@ -1,0 +1,18 @@
+@namespace Fabiano.Theme.RadzenLayoutSample.Controls
+
+@inherits MenuItemsBase
+
+@foreach (var childPage in GetChildPages())
+{
+    if (!Pages.Any(e => e.ParentId == childPage.PageId))
+    {
+        <RadzenPanelMenuItem Text="@childPage.Name" Icon="@childPage.Icon" Path="@GetUrl(childPage)" Target="@GetTarget(childPage)" />
+    }
+    else
+    {
+        <RadzenPanelMenuItem Text="@childPage.Name" Icon="@childPage.Icon" Path="@GetUrl(childPage)" Target="@GetTarget(childPage)">
+            <FabianoPanelMenuItem ParentPage="@childPage" Pages="@Pages" />
+        </RadzenPanelMenuItem>
+    }
+}
+    
